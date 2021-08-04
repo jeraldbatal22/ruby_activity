@@ -1,4 +1,7 @@
 class Users
+  # attr_reader :firstname
+  # attr_writer :firstname
+  attr_accessor :firstname # both re-write and read
   def initialize(firstname, lastname, age, address)
     @firstname = firstname
     @lastname = lastname
@@ -13,3 +16,7 @@ end
 
 user = Users.new('Jerald', 'Batal', 22, 'Caloocan City')
 user.introduce
+puts "Old name"
+puts user.firstname
+puts "New name"
+puts user.firstname = "Jb"
