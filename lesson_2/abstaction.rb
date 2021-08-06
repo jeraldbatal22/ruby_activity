@@ -1,3 +1,5 @@
+class Conversation
+
   public 
 
   def publicConversation
