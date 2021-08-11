@@ -26,3 +26,30 @@ SELECT AVG(age) FROM students;
 
 "DISPLAY ALL STUDENTS BY AGE DESC"
 SELECT * FROM students ORDER BY age DESC;
+
+"CREATE NEW TABLE CLASSROOMS"
+CREATE TABLE classrooms (id integer PRIMARY KEY, student_id integer, section CHARACTER VARYING(255) NOT NULL);
+
+"INSERT 10 RECORDS"
+INSERT INTO classrooms (id, student_id, section) VALUES (1, 1, 'A');
+INSERT INTO classrooms (id, student_id, section) VALUES (2, 2, 'B');
+INSERT INTO classrooms (id, student_id, section) VALUES (3, 3, 'A');
+INSERT INTO classrooms (id, student_id, section) VALUES (4, 4, 'C');
+INSERT INTO classrooms (id, student_id, section) VALUES (5, 5, 'A');
+INSERT INTO classrooms (id, student_id, section) VALUES (6, 6, 'C');
+INSERT INTO classrooms (id, student_id, section) VALUES (7, 7, 'A');
+INSERT INTO classrooms (id, student_id, section) VALUES (8, 8, 'B');
+INSERT INTO classrooms (id, student_id, section) VALUES (9, 9, 'A');
+INSERT INTO classrooms (id, student_id, section) VALUES (10, 10, 'C');
+
+"INNER JOIN"
+SELECT a.*, first_name, last_name, age, location FROM classrooms AS a INNER JOIN students AS b ON b.id = a.student_id;
+
+"LEFT JOIN"
+SELECT a.*, first_name, last_name, age, location FROM classrooms AS a LEFT JOIN students AS b ON b.id = a.student_id;
+
+"RIGHT JOIN"
+SELECT a.*, first_name, last_name, age, location FROM classrooms AS a RIGHT JOIN students AS b ON b.id = a.student_id;
+
+"FULL JOIN"
+SELECT a.*, first_name, last_name, age, location FROM classrooms AS a FULL OUTER JOIN  students AS b ON b.id = a.student_id;
